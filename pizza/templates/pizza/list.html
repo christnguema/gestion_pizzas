@@ -15,12 +15,16 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            background-attachment: scroll;
         }
      </style>
 </head>
 <body class="h-screen w-screen">
     <main class="flex flex-col gap-4 bg-black/60 w-full h-full">
-      <div class="flex flex-col gap-8 items-center mx-auto my-auto">
+        <div class="mb-4">
+            <a href="{% url 'ajouter_pizza' %}" class="btn btn-primary w-full mt-12 mx-auto">Ajouter un pizza</a>
+        </div>
+      <div class="grid grid-cols-3 gap-8 items-center mx-auto my-auto">
         {% for pizza in pizzas %}
           <div class="w-full">
             <div class="card card-border bg-base-100 w-96">
@@ -31,11 +35,12 @@
                     <p class="badge badge-soft badge-primary">VEGETARIENNE</p>
                     {% endif %}
                 </div>
-            </div>
-            <div class="space-x-2">
+                <div class="space-x-2 my-4 mx-auto">
                 <a href="{% url 'modifier_pizza' pizza.id %}" class="btn btn-primary  btn-sm">Modifier</a>
                 <a href="{% url 'supprimer_pizza' pizza.id %}" class="btn btn-primary btn-error btn-soft btn-sm">Supprimer</a>
             </div>
+            </div>
+            
           </div>
         
         {% endfor %}

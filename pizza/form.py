@@ -4,7 +4,7 @@ from .models import Pizza
 class PizzaForm(forms.ModelForm):
     class Meta:
         model = Pizza
-        fields = ["nom", "ingredients", "vegetatienne", "prix"]
+        fields = ["nom", "ingredients", "vegetarienne", "prix"]
         widgets = {
             'nom': forms.TextInput(attrs= {
                 'class' : 'input w-full',
