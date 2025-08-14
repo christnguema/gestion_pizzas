@@ -1,0 +1,8 @@
+<form method="POST" action="" class="space-y-4">
+{% csrf_token %}
+{{form.nom}}
+{{form.ingredients}}
+{{form.vegetarienne}}
+{{form.prix}}
+<button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
